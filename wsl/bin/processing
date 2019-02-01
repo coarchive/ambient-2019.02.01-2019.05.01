@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+run="/mnt/c/processing-3.4/processing-java.exe --force"
+silent=false
+if [ -z "$2" ]; then
+  $silent || echo "${yellow}Running in cwd$reset"
+  sketch_path="$(pwd | winpath)"
+else
+  sketch_path="$(realpath "$2" | winpath)"
+fi
+run+=" --sketch=${sketch_path}"
+case $1 in
+  run)
+    run+=" --run";;
+  export)
+    run+=" --export --platform windows";;
+  build)
+    run+=" --build";;
+  *)
+    $silent || echo "${yellow}Running by default$reset"
+    run+=" --run";;
+esac
+$run

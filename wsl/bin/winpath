@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+if [ $# -ge 1 ]; then
+  input="$1"
+else
+  read -r input
+fi
+real_input=$(realpath "$input")
+if [[ $real_input == $C* ]]; then
+  echo "$real_input" | sed -e 's|/mnt/c|C:/' -e 's|/|\\|g'
+  exit 0
+fi
+echo "\"$real_input\"${red} is not within the C drive!$reset"
+exit 1

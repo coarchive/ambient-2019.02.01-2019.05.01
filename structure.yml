@@ -1,0 +1,49 @@
+
+key: {
+  ">": "refrences",
+  "->": "symlinks",
+  "=>": "hardlinks",
+  "~>": "syncswith",
+}
+
+rootfs: {
+  etc: {
+    bash.bashrc,
+    profile: {
+      refrences: [
+        etc/bash.bashrc,
+        $ambient/wsl/global,
+        $ambient/wsl/profile.d/,
+      ],
+    },
+    profile.d: [
+      globalpha_profile.sh,
+    ],
+    wsl.conf,
+  },
+  root: {
+    .bashrc: {
+      refrences: [
+        $ambient/wsl/root/.bashrc,
+      ],
+    },
+  }
+}
+
+C: {
+
+}
+
+ambient: &ambient {
+  nt: {
+
+  },
+  wsl: {
+    root: {
+
+    },
+    profile.d: {
+
+    }
+  },
+}

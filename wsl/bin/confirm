@@ -1,0 +1,10 @@
+#!/bin/bash
+prompt=${1:-Are you sure?}
+
+read -p "$prompt [${red}y$reset/${yellow}n$reset]: " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[YyTtZz]$ ]]; then
+  echo true
+else
+  echo false
+fi
