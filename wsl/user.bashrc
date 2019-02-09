@@ -1,29 +1,37 @@
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# welcome to the shop(t), I gotta make monet somehow
-shopt -s autocd
-shopt -s cdable_vars
-shopt -s cdspell
-shopt -s histappend
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# aliases
-alias ..="cd .."
+echo "user.bashrc"
+# nice prompt
+export PS1="\[$green\]\u\[$indigo\] in \[$cyan\]\w \[$yellow\]>> \[$reset\]"
 
 # some more ls aliases
-alias ll="ls -alF"
+alias ls="exa"
 alias lsa="ls -A"
-alias l="ls -CF"
 
 # I seem to have trouble typing "yoruvue-dl"
 alias ytdl="youtube-dl"
 alias scdl="youtube-dl --embed-thumbnail"
 
-# alias clip="clip.exe"
+# windows
+alias clip="clip.exe"
+alias cmd="cmd.exe"
 
-# auto sudo
+# root
 alias apt="sudo apt"
+alias su="su -l"
+
+# moving around
+alias ..="cd .."
+function r {
+  tempfile="$(mktemp -t tmp.XXXXXX)"
+  ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+  test -f "$tempfile" &&
+  if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+    cd -- "$(cat "$tempfile")"
+  fi
+  rm -f -- "$tempfile"
+}
+
+# linuxbrew stuff
+function start-brew {
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  umask 002
+}

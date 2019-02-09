@@ -1,0 +1,22 @@
+# I stole this from https://gist.github.com/scottnonnenberg
+# Thanks, Scott!
+
+[user]
+	name = Cole Gannon
+	email = Arcanehood@gmail.com
+[alias]
+	stash-all = stash save --include-untracked
+	lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	conflictstyle = diff3
+	gpgSign = true
+[status]
+	showUntrackedFiles = all
+[transfer]
+	fsckobjects = true
+[push]
+	default = simple
+	followTags = true
+[core]
+	editor = nano
+	autocrlf = input
+	safecrlf = true

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+printf "$reset"
+printf "reset"
+escapes=(
+  bold dim invert invis black red
+  green purple pink indigo grey yellow
+  cyan blue teal l_blue orange
+)
+for env_var in "${escapes[@]}"; do
+  printf "$reset  "
+  printf ${!env_var}
+  printf "$env_var"
+done
+echo

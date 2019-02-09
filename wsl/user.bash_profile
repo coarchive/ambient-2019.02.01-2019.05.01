@@ -1,3 +1,10 @@
+echo "user.bash_profile"
+shopt -s autocd
+# shopt -s cdable_vars
+shopt -s cdspell
+shopt -s checkhash
+shopt -s dirspell
 
-export PS1="\[$green\]\u\[$indigo\] in \[$cyan\]\w \[$yellow\]>> \[$reset\]"
-. $dotfiles/user.bashrc
+if [ -x $dotfiles/user.bashrc ]; then
+  source $dotfiles/user.bashrc
+fi

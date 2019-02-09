@@ -4,7 +4,6 @@ Most of my config files will reside here.
 There's a lot of symlink black magic going on in this directory.
 For instance, `/root/.bashrc` links to `$ambient/wsl/root.bashrc`.
 
-
 Where is `$ambient` set?
 
 Well that's set on the Windows side like this:
