@@ -1,3 +1,2 @@
-echo "root.bash_profile"
-export PS1="\[$pink\]\u\[$l_blue\] & \[$cyan\]\w \[$pink\]! \[$reset\]"
+export PS1="\[$pink\]\u\[$purple\] & \[$cyan\]\w \[$orange\]! \[$reset\]"
 source "$dotfiles/root.bashrc"

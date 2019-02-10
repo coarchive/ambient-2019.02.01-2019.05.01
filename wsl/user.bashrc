@@ -1,7 +1,3 @@
-echo "user.bashrc"
-# nice prompt
-export PS1="\[$green\]\u\[$indigo\] in \[$cyan\]\w \[$yellow\]>> \[$reset\]"
-
 # some more ls aliases
 alias ls="exa"
 alias lsa="ls -A"

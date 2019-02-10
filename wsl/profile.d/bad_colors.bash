@@ -14,9 +14,9 @@ export grey=$'\e[90m'
 export yellow=$'\e[93m'
 export cyan=$'\e[96m'
 
-export blue=$'\e[38;5;027m'
-export teal=$'\e[38;5;037m'
-export l_blue=$'\e[38;5;039m'
+export blue=$'\e[38;5;018m'
+export teal=$'\e[38;5;122m'
+export cyan=$'\e[38;5;074m'
 export orange=$'\e[38;5;173m'
 
 # tends to show up more orangey
