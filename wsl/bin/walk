@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # this file allows execution of .class files
-# eh? why is it called "walk.sh"?
+# why is it called "walk.sh"?
 # well, with the speed that java "runs" at, can you really call it running?
-set -e
+set -e # close on error
 filename=$(basename -- "$1")
 filename="${filename%.*}"
-echo "${yellow}Compiling code!"
-echo "${cyan}Output:${reset}"
+echo "${yellow}Compiling...$reset"
 echo
 javac $1
 echo "${green}Running code!${reset}"

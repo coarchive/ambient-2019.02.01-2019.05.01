@@ -1,1 +1,1 @@
-powershell.exe -NoExit -Command cls
+powershell.exe -NoLogo

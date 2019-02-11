@@ -18,5 +18,5 @@
 	followTags = true
 [core]
 	editor = nano
-	autocrlf = input
+	; autocrlf = input
 	safecrlf = true

@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const e = '\033';
+const c = `${e}[`;
+const r = `${c}0m`;
+const y = `${c}93m`;
+const x = `${c}38;5;`;
+Object.keys(process.env).forEach(key => {
+  let val = process.env[key];
+  if (val.includes(e)) {
+    val = `${r}${val.replace(/(\033\[([\d;])+m)/g, "$1\\033[$2m")}`;
+  }
+  process.stdout.write(`${c}35m${key}${x}173m: `);
+  if (val.includes(':')) {
+    console.log(`${y}[`);
+    val.split(':').forEach((path, idx, self) => {
+      process.stdout.write(`${x}018m  ${path}`);
+      if (idx + 1 !== self.length) {
+        console.log(`${x}074m,`);
+      } else {
+        console.log();
+      }
+    });
+    console.log(`${y}]${r}`);
+  } else {
+    console.log(`${c}34m${val}${r}`);
+  }
+});
