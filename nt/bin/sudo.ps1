@@ -1,4 +1,3 @@
-
 Set-StrictMode -Off;
 
 if(!$args) { "usage: sudo <cmd...>"; exit 1 }

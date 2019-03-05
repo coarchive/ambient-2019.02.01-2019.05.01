@@ -1,7 +1,7 @@
-﻿// See https://hyper.is#cfg for all currently supported options.
+// See https://hyper.is#cfg for all currently supported options.
 const config = {
-  shell: "C:/Windows/System32/wsl.exe",
-  shellArgs: [],
+  shell:         "C:/Windows/System32/wsl.exe",
+  shellArgs:     [],
   defaultSSHApp: false,
 };
 config.borderColor = "#323E4D";
@@ -34,22 +34,22 @@ const colors = {
   pink:      "#F789BA",
   champagne: "#FFDDDD",
   grey:      "#546386",
-}
+};
 function choose(good, bad) {
   return colors[badColor ? bad : good];
 }
 config.colors = {
-  black: config.backgroundColor,
+  black:   config.backgroundColor,
   red:     "#F3566A",
   yellow:  "#FEA758",
   green:   "#4AEF89",
   cyan:    choose("cyan", "blue"),
   blue:    choose("blue", "purple"),
   magenta: choose("purple", "pink"),
-}
+};
 if (!badColor) {
   Object.assign(config.colors, {
-    white: config.foregroundColor,
+    white:        config.foregroundColor,
     lightRed:     "#F789BA",
     lightYellow:  "#FEE868",
     lightGreen:   "#BAF2C2",
@@ -61,16 +61,32 @@ if (!badColor) {
   });
 }
 Object.assign(config, {
-  fontSize: 14,
-  padding: "12px 14px",
+  fontSize:          14,
+  padding:           "12px 14px",
   showHamburgerMenu: false,
-  fontFamily: "Hack, Ubuntu Mono, monospace",
+  fontFamily:        "Hack, Ubuntu Mono, monospace",
 });
+const painModifier = "alt+";
+const paneNavigation = {
+  hotkeys: {
+    navigation: {
+      up:    `${painModifier}j`,
+      down:  `${painModifier}k`,
+      left:  `${painModifier}h`,
+      right: `${painModifier}l`,
+    },
+    permutation_modifier: "shift", // Added to jump and navigation hotkeys for pane permutation
+    jump_prefix:          painModifier, // completed with 1-9 digits
+    maximize:             `${painModifier}+enter`,
+  },
+};
+
 module.exports = {
   config,
-  plugins: ["hyperfull"],
+  paneNavigation,
+  plugins:      ["hyperfull", "hyper-pane"],
   localPlugins: [],
-  keymaps: {
+  keymaps:      {
     "tab:new": "alt+n",
   },
 };

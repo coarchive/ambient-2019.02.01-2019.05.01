@@ -5,9 +5,7 @@ const c = `${e}[`;
 const r = `${c}0m`;
 const y = `${c}93m`;
 const x = `${c}38;5;`;
-if (process.platform === "win32") {
-  throw Error("env_cat does not support Windows!");
-}
+const delimiter = process.platform === "win32" ? ";" : ":";
 
 Object.keys(process.env).sort().forEach((key) => {
   let val = process.env[key];
@@ -15,9 +13,9 @@ Object.keys(process.env).sort().forEach((key) => {
   if (val.includes(e)) {
     val = `${r}${val.replace(/(\033\[([\d;]+)m)/g, "$1\\033[$2m")}`;
   }
-  if (val.includes(':')) {
+  if (val.includes(delimiter)) {
     console.log(`${x}122m ${y}[`);
-    val.split(':').forEach((path, idx, self) => {
+    val.split(delimiter).forEach((path, idx, self) => {
       console.log(`${x}018m  ${path}${idx + 1 === self.length ? "" : `${x}074m,`}`);
     });
     console.log(`${y}]${r}`);

@@ -22,19 +22,24 @@ alias su="su -l"
 
 # moving around
 alias ..="cd .."
-alias bc="cd $OLDPWD"
+alias bc="cd -"
 function r {
   tempfile="$(mktemp -t tmp.XXXXXX)"
-  ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+  ranger --choosedir="$tempfile" "${@:-$PWD}"
   test -f "$tempfile" &&
-  if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+  if [ "$(cat -- "$tempfile")" != "$PWD" ]; then
     cd -- "$(cat "$tempfile")"
   fi
   rm -f -- "$tempfile"
 }
 
 # linuxbrew stuff
+export HOMEBREW_NO_AUTO_UPDATE=1
+umask 002
 function start-brew {
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  umask 002
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+}
+
+function print_path {
+  echo "${PATH//:/$'\n'}"
 }

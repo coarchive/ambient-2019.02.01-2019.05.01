@@ -15,7 +15,7 @@ input() {
   fi
   in_file="$(basename "$1")"
   rawname="${in_file%.java}"
-  compile $in_file
+  compile "$in_file"
 }
 compile() {
   echo "${orange}javac:$reset"
@@ -26,7 +26,7 @@ compile() {
 clean() {
   echo "Deleting these files:"
   if [[ "$1" == yes ]]; then
-    echo $black
+    echo "$black"
   fi
   find . -name "*.class" -type f
   if [[ "$1" == yes ]] || [ "$(confirm)" = true ]; then
@@ -39,14 +39,14 @@ clean() {
   echo
 }
 native() {
-  if [ -z $1 ]; then
+  if [ -z "$1" ]; then
     out_file="$(pwd)/$rawname"
   else
     out_file="${before_cd}/$1"
   fi
-  echo $out_file
-  echo $black
-  native-image $rawname $out_file
+  echo "$out_file"
+  echo "$black"
+  native-image "$rawname" "$out_file"
   clear
 }
 run_code() {

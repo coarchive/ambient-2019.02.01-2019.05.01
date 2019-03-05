@@ -6,11 +6,11 @@
 set -e # close on error
 filename=$(basename -- "$1")
 filename="${filename%.*}"
-echo "${yellow}Compiling...$reset"
+echo "${pink}Compiling...$reset"
 echo
-javac $1
-echo "${green}Running code!${reset}"
-echo "${cyan}Output:${reset}"
+cmd.exe /C javac "$1"
+clear
+echo "${cyan}Output:$reset"
 echo
 shift
-java "$filename" "$@"
+cmd.exe /C java "$filename" "$@"

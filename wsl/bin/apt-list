@@ -1,12 +1,13 @@
 #!/bin/bash
 # https://gist.github.com/UniIsland
+export LC_ALL=C
 
 parse_dpkg_log() {
   {
-    for FN in `ls -1 /var/log/dpkg.log*` ; do
-      CMD="cat"
-      [ ${FN##*.} == "gz" ] && CMD="zcat"
-      $CMD $FN | egrep "[0-9] install" | awk '{print $4}' \
+    for log in /var/log/dpkg.log* ; do
+      cmd=cat
+      [ "${FN##*.}" == "gz" ] && cmd="zcat"
+      $cmd "$log" | grep -E "[0-9] install" | awk '{print $4}' \
         | awk -F":" '{print $1}'
     done
   } | sort | uniq
