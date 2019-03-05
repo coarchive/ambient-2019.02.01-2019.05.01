@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "$PWD"
+wexecute.exe powershell.exe -NoLogo -NoExit -Command "\"cd $PWD; clear\""

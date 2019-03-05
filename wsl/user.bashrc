@@ -13,9 +13,8 @@ alias scdl="youtube-dl --embed-thumbnail"
 # windows
 alias clip="clip.exe"
 alias cmd="cmd.exe"
-alias posh="cmd /C powershell.exe -NoLogo"
-alias winsudo="posh "
-
+alias wexe="wexecute.exe"
+alias lxend="wexe lxend"
 # root
 alias apt="sudo apt"
 alias su="su -l"
