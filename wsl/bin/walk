@@ -6,11 +6,13 @@
 set -e # close on error
 filename=$(basename -- "$1")
 filename="${filename%.*}"
+# walk-clean yes
 echo "${pink}Compiling...$reset"
 echo
-cmd.exe /C javac "$1"
+wexecute.exe javac "$1"
 clear
 echo "${cyan}Output:$reset"
 echo
 shift
-cmd.exe /C java "$filename" "$@"
+wexecute.exe java "$filename" "$@"
+walk-clean yes

@@ -40,6 +40,6 @@ function start-brew {
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 }
 
-function print_path {
+function print-path {
   echo "${PATH//:/$'\n'}"
 }

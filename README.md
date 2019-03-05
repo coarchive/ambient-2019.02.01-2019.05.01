@@ -1,4 +1,4 @@
-# .files
+# ambient (environment)
 
 Since I use WSL for code, there's a lot of config files to make
 the environment cool and good.

@@ -5,14 +5,15 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
     printf "$grey"
     if [ -x /usr/lib/command-not-found ]; then
       /usr/lib/command-not-found -- "$1"
+      r=$?
       printf "$reset"
-      return $?
+      return $r
     elif [ -x /usr/share/command-not-found/command-not-found ]; then
       /usr/share/command-not-found/command-not-found -- "$1"
+      r=$?
       printf "$reset"
-      return $?
+      return $r
     else
-      echo askdjSADLJAS
       printf "\"%s%s%reset\" is not found" "$pink" "$1" "$reset" >&2
       return 127
     fi
