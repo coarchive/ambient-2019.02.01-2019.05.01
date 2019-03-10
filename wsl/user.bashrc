@@ -1,6 +1,9 @@
+#!/bin/bash
+
 # some more ls aliases
 alias ls="exa"
-alias lsa="ls -A"
+alias lsa="exa -A"
+alias lsd="exa -la --tree"
 
 # I seem to have trouble typing "yoruvue-dl"
 alias ytdl="youtube-dl"
@@ -15,9 +18,10 @@ alias clip="clip.exe"
 alias cmd="cmd.exe"
 alias wexe="wexecute.exe"
 alias lxend="wexe lxend"
+
 # root
 alias apt="sudo apt"
-alias su="su -l"
+alias sul="su -l"
 
 # moving around
 alias ..="cd .."

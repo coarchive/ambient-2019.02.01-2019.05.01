@@ -1,3 +1,5 @@
+#!/bin/bash
+
 shopt -s checkwinsize
 shopt -s histappend
 HISTSIZE=1000

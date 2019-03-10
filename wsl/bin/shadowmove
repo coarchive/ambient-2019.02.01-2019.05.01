@@ -6,6 +6,7 @@ if [ "$#" -lt 2 ] || [ "$#" -gt 4 ]; then
   exit 1
 fi
 
+args=()
 while true; do
   if [ -z "$1" ]; then
     break
