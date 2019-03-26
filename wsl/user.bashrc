@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # some more ls aliases
-alias ls="exa"
-alias lsa="exa -A"
+# alias ls="exa"
+alias lsa="exa -a"
 alias lsd="exa -la --tree"
 
 # I seem to have trouble typing "yoruvue-dl"
@@ -35,12 +35,14 @@ function r {
   fi
   rm -f -- "$tempfile"
 }
-
-# linuxbrew stuff
-export HOMEBREW_NO_AUTO_UPDATE=1
-umask 002
-function start-brew {
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+function ddir {
+  if [[ "$1" == "set" || "$1" == "enable" ]]; then
+    pwd > ~/.ddir
+  elif [[ "$1" == "disable" ]]; then
+    rm ~/.ddir
+  else
+    cd "$(<~/.ddir)"
+  fi
 }
 
 function print-path {

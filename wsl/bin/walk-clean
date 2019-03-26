@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-find . -name "*.class" -type f
-if [[ "$1" == yes ]] || [ "$(confirm)" = true ]; then
+if [[ "$1" == yes ]]; then
   find . -name "*.class" -type f -delete
   echo "${green}Finished!"
 fi

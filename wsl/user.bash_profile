@@ -13,3 +13,5 @@ export PS1="\[$green\]\u\[$yellow\] in \[$cyan\]\w\[$purple\] λ \[$reset\]"
 if [ -x "$dotfiles/user.bashrc" ]; then
   source "$dotfiles/user.bashrc"
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"

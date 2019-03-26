@@ -9,10 +9,15 @@ filename="${filename%.*}"
 # walk-clean yes
 echo "${pink}Compiling...$reset"
 echo
-wexecute.exe javac "$1"
-clear
-echo "${cyan}Output:$reset"
-echo
-shift
-wexecute.exe java "$filename" "$@"
+wexecute.exe javac "$1" > /tmp/walk_error
+cat /tmp/walk_error
+err="$(</tmp/walk_error)"
+(echo "$err" | hexdump -C)
+# if [ -z "$err" ]; then
+#   clear
+#   echo "${cyan}Output:$reset"
+#   echo
+#   shift
+#   wexecute.exe java "$filename" "$@"
+# fi
 walk-clean yes
