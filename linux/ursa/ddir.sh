@@ -7,6 +7,8 @@ function ddir {
     rm ~/.ddir
   elif [ -r ~/.ddir ]; then
     cd "$(<~/.ddir)" || exit 1
+  elif [ $PWD = /mnt/c/Users/Alf ]; then
+    cd Desktop
   fi
 }
 ddir

@@ -25,22 +25,16 @@ else
 fi
 if grep -q Microsoft /proc/version; then
   wsl=true
-  ambient_location=/mnt/c/ambient
 else
   wsl=false
-  ambient_location=/ambient
 fi
 export interactive
 export login
 export root
 export wsl
+export dotfiles="$(dirname "$(realpath /etc/profile)")"
 
-if [ -r $ambient_location ]; then
-  export ambient="$(<$ambient_location)"
-  export dotfiles="$ambient/linux"
-fi
-
-if [ -z $spawned ] || [ $etc_environment_ran ]; then
+if [ -z $spawned ] || [ -n "$etc_environment_ran" ]; then
   scripts="$dotfiles/spawn/"
   for i in $scripts*.sh; do
     if [ -r "$i" ]; then

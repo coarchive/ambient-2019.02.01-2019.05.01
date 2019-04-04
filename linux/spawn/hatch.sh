@@ -9,7 +9,7 @@ function hatch {
     err "Invalid egg name"
     return 1
   fi
-  local file="$dotfiles/redd/$1.sh"
+  local file="$dotfiles/eggs/$1.sh"
   if [ -r "$file" ]; then
     source "$file"
   else

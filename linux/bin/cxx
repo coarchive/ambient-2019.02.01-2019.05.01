@@ -1,4 +1,0 @@
-#!/bin/bash
-
-out="./$1.out"
-g++ -g -Wall -Wextra -Werror "$1" -o "$out" && ("$out"; rm "$out")

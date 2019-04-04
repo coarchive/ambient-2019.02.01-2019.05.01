@@ -13,3 +13,21 @@ function r {
 function print-path {
   echo "${PATH//:/$'\n'}"
 }
+
+function npm-list {
+  npm ls -g --depth=0
+}
+
+function symlink {
+  ln -s "$1"
+}
+
+function cxx {
+  out="./$1.out"
+  g++ -g -Wall -Wextra -Werror "$1" -o "$out" && ("$out"; rm "$out")
+}
+
+function cxxx {
+  out="./$1.debug"
+  g++ -Wall -Wextra -Werror "$1" -o "$out" && (gdb "$out"; rm "$out")
+}
