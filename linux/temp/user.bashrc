@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # some more ls aliases
-# alias ls="exa"
+alias ls="exa"
 alias lsa="exa -a"
 alias lsd="exa -la --tree"
 
@@ -31,7 +31,7 @@ function r {
   ranger --choosedir="$tempfile" "${@:-$PWD}"
   test -f "$tempfile" &&
   if [ "$(cat -- "$tempfile")" != "$PWD" ]; then
-    cd -- "$(cat "$tempfile")"
+    cd -- "$(cat "$tempfile")" || exit 1
   fi
   rm -f -- "$tempfile"
 }
@@ -41,10 +41,10 @@ function ddir {
   elif [[ "$1" == "disable" ]]; then
     rm ~/.ddir
   else
-    cd "$(<~/.ddir)"
+    cd "$(<~/.ddir)" || exit 1
   fi
 }
-
+ddir
 function print-path {
   echo "${PATH//:/$'\n'}"
 }

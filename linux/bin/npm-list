@@ -1,0 +1,3 @@
+#!/bin/bash
+
+npm ls -g --depth=0

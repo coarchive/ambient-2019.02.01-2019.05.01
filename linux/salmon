@@ -1,0 +1,62 @@
+#!/bin/bash
+# shellcheck disable=2154,2155,1090
+
+shopt -s checkwinsize
+shopt -s histappend
+HISTSIZE=100
+HISTFILESIZE=300
+HISTCONTROL=ignoreboth
+
+# info
+if [[ $- == *i* ]]; then
+  interactive=true
+else
+  interactive=false
+fi
+if shopt -q login_shell; then
+  login=true
+else
+  login=false
+fi
+if [ "$(id -u)" = 0 ]; then
+  root=true
+else
+  root=false
+fi
+if grep -q Microsoft /proc/version; then
+  wsl=true
+  ambient_location=/mnt/c/ambient
+else
+  wsl=false
+  ambient_location=/ambient
+fi
+export interactive
+export login
+export root
+export wsl
+
+if [ -r $ambient_location ]; then
+  export ambient="$(<$ambient_location)"
+  export dotfiles="$ambient/linux"
+fi
+
+if [ -z $spawned ] || [ $etc_environment_ran ]; then
+  scripts="$dotfiles/spawn/"
+  for i in $scripts*.sh; do
+    if [ -r "$i" ]; then
+      source "$i"
+    fi
+  done
+  unset i
+  unset scripts
+  export spawned=0
+fi
+
+if $interactive; then
+  bear="$dotfiles/ursa/"
+  for i in $bear*.sh; do
+    source "$i"
+  done
+fi
+
+umask 000 # since I don't actually care too much about perms

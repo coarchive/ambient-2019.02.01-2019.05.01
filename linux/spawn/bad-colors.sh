@@ -1,5 +1,6 @@
-# These are the colors based on how they show up in my terminal
+# shellcheck shell=bash
 
+# These are the colors based on how they show up in my terminal
 export reset=$'\e[0m'
 export bold=$'\e[1m'
 export dim=$'\e[2m'

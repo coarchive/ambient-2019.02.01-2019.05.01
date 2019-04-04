@@ -1,7 +1,6 @@
 #!/bin/bash
 
 shopt -s autocd
-# shopt -s cdable_vars
 shopt -s cdspell
 shopt -s checkhash
 shopt -s dirspell
