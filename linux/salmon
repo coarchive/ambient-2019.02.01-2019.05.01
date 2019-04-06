@@ -33,6 +33,7 @@ export login
 export root
 export wsl
 export dotfiles="$(dirname "$(realpath /etc/profile)")"
+# export ambient=$(realpath "$dotfiles"/..)
 
 if [ -z $spawned ] || [ -n "$etc_environment_ran" ]; then
   scripts="$dotfiles/spawn/"

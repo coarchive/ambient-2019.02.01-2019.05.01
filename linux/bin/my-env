@@ -5,23 +5,26 @@ const c = `${e}[`;
 const r = `${c}0m`;
 const y = `${c}93m`;
 const x = `${c}38;5;`;
-if (process.platform === "win32") {
-  throw Error("env_cat does not support Windows!");
-}
-
+let delimiter = process.platform === "win32" ? ';' : ':';
+const log = s => console.log(s);
 Object.keys(process.env).sort().forEach((key) => {
   let val = process.env[key];
   process.stdout.write(`${c}35m${key}${x}173m: `);
-  if (val.includes(e)) {
-    val = `${r}${val.replace(/(\033\[([\d;]+)m)/g, "$1\\033[$2m")}`;
-  }
-  if (val.includes(':')) {
-    console.log(`${x}122m ${y}[`);
-    val.split(':').forEach((path, idx, self) => {
-      console.log(`${x}018m  ${path}${idx + 1 === self.length ? "" : `${x}074m,`}`);
-    });
-    console.log(`${y}]${r}`);
+  if (key === "PS1") {
+    log(val.replace(/\\[\[\]]/g, ''));
   } else {
-    console.log(`${c}34m${val}${r}`);
+    if (val.includes(e)) {
+      val = `${r}${val.replace(/(\033\[([\d;]+)m)/g, "$1\\033[$2m")}`;
+    }
+    if (val.includes(delimiter)) {
+      log(`${x}122m ${y}[`);
+      val.split(delimiter).forEach(
+        (path, idx, self) =>
+          log(`${x}018m  ${path}${idx + 1 === self.length ? "" : `${x}074m,`}`)
+      );
+      log(`${y}]${r}`);
+    } else {
+      log(`${c}34m${val}${r}`);
+    }
   }
 });

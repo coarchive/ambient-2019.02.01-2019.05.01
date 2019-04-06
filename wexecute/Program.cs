@@ -17,7 +17,6 @@ namespace WExecute {
       System.Diagnostics.Process cmd = new System.Diagnostics.Process();
       cmd.StartInfo.FileName = "cmd.exe";
       cmd.StartInfo.UseShellExecute = false;
-      cmd.StartInfo.CreateNoWindow = true;
       cmd.StartInfo.Arguments = "/C" + outArgs.Replace("/mnt/c", "C:");
       cmd.Start();
       cmd.WaitForExit();
