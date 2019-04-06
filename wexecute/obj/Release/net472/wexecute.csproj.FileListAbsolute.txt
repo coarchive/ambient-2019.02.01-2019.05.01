@@ -1,8 +1,0 @@
-C:\Users\Alf\Desktop\ambient\wexecute\bin\Release\net472\wexecute.exe
-C:\Users\Alf\Desktop\ambient\wexecute\bin\Release\net472\wexecute.pdb
-C:\Users\Alf\Desktop\ambient\wexecute\obj\Release\net472\wexecute.csprojAssemblyReference.cache
-C:\Users\Alf\Desktop\ambient\wexecute\obj\Release\net472\wexecute.csproj.CoreCompileInputs.cache
-C:\Users\Alf\Desktop\ambient\wexecute\obj\Release\net472\wexecute.AssemblyInfoInputs.cache
-C:\Users\Alf\Desktop\ambient\wexecute\obj\Release\net472\wexecute.AssemblyInfo.cs
-C:\Users\Alf\Desktop\ambient\wexecute\obj\Release\net472\wexecute.exe
-C:\Users\Alf\Desktop\ambient\wexecute\obj\Release\net472\wexecute.pdb

@@ -3,6 +3,7 @@
 # some more ls aliases
 alias ls="exa"
 alias lsa="exa -a"
+alias lsw="exa -la"
 alias lsd="exa -la --tree"
 
 # I seem to have trouble typing "yoruvue-dl"

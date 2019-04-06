@@ -82,7 +82,7 @@ const paneNavigation = {
 module.exports = {
   config,
   paneNavigation,
-  plugins:      ["hyperfull", "hyper-pane"],
+  plugins:      ["hyperfullscreen", "hyper-pane"],
   localPlugins: [],
   keymaps:      {
     "tab:new": "alt+n",
