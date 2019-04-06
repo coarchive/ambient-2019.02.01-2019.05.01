@@ -27,3 +27,6 @@ alias sul="su -l"
 # moving around
 alias ..="cd .."
 alias bc="cd -"
+
+alias cdd="cd /mnt/c/Users/Alf/Desktop"
+alias code="cdd && cd coalpha"

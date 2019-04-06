@@ -14,6 +14,7 @@ function hatch {
     source "$file"
   else
     err "Couldn't find that egg"
+    return 1
   fi
 }
 export -f hatch

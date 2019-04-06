@@ -9,6 +9,7 @@
       // Functionality
         "editor.tabSize": 2,
         "editor.detectIndentation": false,
+        "editor.suggestSelection": "first",
         "editor.selectionHighlight": false, // too distracting
         "editor.multiCursorModifier": "ctrlCmd",
         "editor.emptySelectionClipboard": false,
@@ -39,20 +40,21 @@
 
     // Workbench
       "workbench.startupEditor": "none",
-      "workbench.list.keyboardNavigation": "simple",
+      "workbench.list.keyboardNavigation": "simple", // turns off that annoying filter "feature"
       "workbench.editor.highlightModifiedTabs": true,
       "workbench.settings.useSplitJSON": true,
       "workbench.sideBar.location": "right",
       "window.newWindowDimensions": "maximized",
+      "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
       // Theme
         "materialTheme.accent": "Indigo",
-        "workbench.colorTheme": "Material Theme Palenight",
         "workbench.iconTheme": "material-icon-theme",
         "workbench.colorCustomizations": {
           "editorWarning.foreground": "#b6c9",
         },
 
     // Window
+      "window.zoomLevel": 0,
       "window.restoreWindows": "folders",
       "window.menuBarVisibility": "visible",
 
@@ -125,10 +127,11 @@
 
     // Liveshare
       "liveshare.showInStatusBar": "never",
+    
+    // Settings Sync
       "sync.gist": "0a038f3900f101ea5a7d9e3a8cefa539",
-      "window.zoomLevel": 0,
-      "editor.suggestSelection": "first",
-      "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    
+    // Code Time
       "showWeeklyRanking": false,
       "showMusicMetrics": false,
       "showGitMetrics": false,

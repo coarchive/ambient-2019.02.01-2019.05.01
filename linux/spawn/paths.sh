@@ -15,6 +15,7 @@ bins=(
   /trash/been/bin
   # my bin
   "$dotfiles/bin"
+  "$dotfiles/common/bin"
   # windows stuff
   $windir
   $windir/system32
@@ -23,5 +24,5 @@ bin_string=""
 for i in "${bins[@]}"; do
   bin_string+="$i:"
 done
-export PATH=${bin_string%?}
 unset bins
+export PATH=${bin_string%?}
