@@ -1,0 +1,12 @@
+#!/bin/bash
+
+n="$(nameplate "$1")"
+obj="$n.o"
+elf="$n.elf"
+if nasm "$1 -f elf64 -o $obj"; then
+  if ld "$obj -o $elf"; then
+    "./$elf"
+    rm "$elf"
+  fi
+  rm "$obj"
+fi

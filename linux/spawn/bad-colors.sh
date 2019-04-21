@@ -1,25 +1,26 @@
 # shellcheck shell=bash
+# colors are ansi 3/4 bit colors
 
-# These are the colors based on how they show up in my terminal
 export reset=$'\e[0m'
 export bold=$'\e[1m'
 export dim=$'\e[2m'
 export invert=$'\e[7m'
 export invis=$'\e[8m'
-export black=$'\e[30m'
-export red=$'\e[31m'
-export green=$'\e[32m'
-export purple=$'\e[34m'
-export pink=$'\e[35m'
-export indigo=$'\e[36m'
-export grey=$'\e[90m'
-export yellow=$'\e[93m'
-export cyan=$'\e[96m'
 
-export blue=$'\e[38;5;018m'
-export teal=$'\e[38;5;122m'
-export cyan=$'\e[38;5;074m'
-export orange=$'\e[38;5;173m'
+export black=$'\e[30m'   #1a1a1a
+export red=$'\e[31m'     #ff0883
+export green=$'\e[32m'   #86f420
+export orange=$'\e[33m'  #fa8419
+export blue=$'\e[34m'    #0883ff
+export purple=$'\e[35m'  #9d65ff
+export cyan=$'\e[36m'    #009B9B
+export white=$'\e[37m'   #e7e5e7
 
-# tends to show up more orangey
-# export yellow=$'\e[33m'
+export grey=$'\e[90'     #625e4c
+export pink=$'\e[91m'    #FF69B4
+export lime=$'\e[92m'    #98FB98
+export yellow=$'\e[93m'  #F0E68C
+export sky=$'\e[94m'     #87CEFA
+export fuchsia=$'\e[95m' #FF00FF
+export yan=$'\e[96m'     #58d1eb
+export flash=$'\e[97m'   #ffffff

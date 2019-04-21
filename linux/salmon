@@ -47,7 +47,7 @@ if [ -z $spawned ] || [ -n "$etc_environment_ran" ]; then
   export spawned=0
 fi
 
-if $interactive; then
+if $interactive && ! $root; then
   bear="$dotfiles/ursa/"
   for i in $bear*.sh; do
     source "$i"

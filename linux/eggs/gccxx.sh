@@ -1,6 +1,14 @@
 #!/bin/bash
-args=(
+debug=(
   -g
+  -O0
+)
+release=(
+  -O2
+  -s
+  -DNDEBUG
+)
+args=(
   -pedantic
   -Wextra
   -Wcast-align
@@ -27,7 +35,8 @@ args=(
   -Wno-unused
 )
 
-function ccxx { # compile cplusplus
+
+function cxxc { # cplusplus compile
   $([ "$1" = "nt" ] && echo "wexecute.exe") g++ "${args[@]}" "$2" -o "$3"
 }
 
@@ -41,12 +50,14 @@ function cxx { # cplusplus
     return 1
   fi
   local out="./${2%.*}.elf"
-  cxxc linux "$2" "$out"
-  if $? && [ "$1" = run ]; then
-    ("$out"; rm "$out")
-  elif [ "$2" != compile ]; then
-    print_help
-    return 1
+  if cxxc linux "$2" "$out"; then
+    if [ "$1" = run ]; then
+      echo "out: $out"
+      ("$out"; rm "$out")
+    elif [ "$1" != compile ]; then
+      print_help
+      return 1
+    fi
   fi
 }
 
@@ -56,12 +67,14 @@ function nt-cxx { # nt cplusplus
     return 1
   fi
   local out="./${2%.*}.exe"
-  cxxc nt "$2" "$out"
-  if $? && [ "$1" = run ]; then
-    ("$out"; rm "$out")
-  elif [ "$2" != compile ]; then
-    print_help
-    return 1
+  if cxxc nt "$2" "$out"; then
+    if [ "$1" = run ]; then
+      echo "out: $out"
+      ("$out"; rm "$out")
+    elif [ "$1" != compile ]; then
+      print_help
+      return 1
+    fi
   fi
 }
 

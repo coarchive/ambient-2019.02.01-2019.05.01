@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  err "nameplate needs one argument!"
+  exit 1
+fi
+file=$(basename -- "$1")
+if [ $? -eq 0 ]; then
+  echo "${file%.*}"
+else
+  exit $?
+fi

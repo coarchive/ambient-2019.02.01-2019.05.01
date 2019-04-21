@@ -1,4 +1,4 @@
-﻿// See https://hyper.is#cfg for all currently supported options.
+﻿// See https://hyper.is#cfg for all currently supported options
 const config = {
   shell:         "C:/Windows/System32/wsl.exe",
   shellArgs:     [],
@@ -16,12 +16,12 @@ const cursorColors = [
   "#91b3e5", "#245EC1", // Friday
   "#7881DE", "#53509C", // Saturday
 ];
-const randomColor = cursorColors[0 | Math.random() * cursorColors.length];
+const randomColor = cursorColors[0 | Math.random() * cursorColors.length] + "69";
 config.cursorColor = config.selectionColor = randomColor;
 config.cursorAccentColor = config[
   `${parseInt(randomColor.slice(1), 16) > 0x999999 ? "back" : "fore"}groundColor`
 ];
-const badColor = true;
+const badColor = false;
 const colors = {
   red:       "#F3566A",
   orange:    "#FEA758",

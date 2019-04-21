@@ -88,8 +88,6 @@
       "java.configuration.checkProjectSettingsExclusions": false,
     // Kotlin
       "[kotlin]": {},
-    // Crystal
-      "crystal-lang.bashOnWindows": true,
     // D
       "d.enableAutoComplete": false,
       "d.enableFormatting": false,
@@ -120,9 +118,6 @@
     // Shellcheck
       "shellcheck.useWSL": true,
       "shellcheck.disableVersionCheck": true,
-
-    // Spellcheck
-      "cSpell.showStatus": false,
       "cSpell.spellCheckDelayMs": 999,
 
     // Liveshare
@@ -135,4 +130,10 @@
       "showWeeklyRanking": false,
       "showMusicMetrics": false,
       "showGitMetrics": false,
+      "cSpell.logLevel": "Information",
+      "cSpell.language": "en,en-US",
+      "crystal-lang.compiler": "crystal.bat",
+      "crystal-lang.bashOnWindows": true,
+      "crystal-lang.hover": true,
+      "crystal-lang.logLevel": "warn",
 }

@@ -2,9 +2,9 @@
 
 printf "%sreset" "$reset"
 escapes=(
-  bold dim invert invis black red orange
-  yellow green teal cyan blue indigo purple
-  pink grey
+  bold dim invert invis
+  black red green orange blue purple cyan white
+  grey pink lime yellow sky fuchsia yan flash
 )
 for env_var in "${escapes[@]}"; do
   printf "%s  " "$reset"

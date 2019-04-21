@@ -1,5 +1,6 @@
 #!/bin/bash
-# https://gist.github.com/UniIsland
+
+## https://gist.github.com/UniIsland
 export LC_ALL=C
 
 parse_dpkg_log() {
