@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "$pink$1$reset" 1>&2
+shift
+echo "$pink$*$reset" 1>&2

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Windows Subsystem Launch (it's a terrible portmanteau, I know)
+
+PATH="$wslfiles/bin:$wslfiles/shims:$PATH"
+
+if ntrc elevated; then
+  NT_elevated=true
+else
+  NT_elevated=false
+fi
+export NT_elevated

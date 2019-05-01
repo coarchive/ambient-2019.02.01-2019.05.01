@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+
+exec "/mnt/c/Windows/System32/cmd.exe /c " . join(' ', "@ARGV") =~ s{/mnt/c}{C:}gr

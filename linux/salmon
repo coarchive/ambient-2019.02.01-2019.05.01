@@ -33,25 +33,26 @@ export login
 export root
 export wsl
 export dotfiles="$(dirname "$(realpath /etc/profile)")"
-# export ambient=$(realpath "$dotfiles"/..)
+export ambient="$(realpath "$dotfiles/..")"
+export wslfiles="$ambient/wsl"
 
-if [ -z $spawned ] || [ -n "$etc_environment_ran" ]; then
-  scripts="$dotfiles/spawn/"
-  for i in $scripts*.sh; do
-    if [ -r "$i" ]; then
-      source "$i"
-    fi
-  done
-  unset i
-  unset scripts
-  export spawned=0
-fi
-
-if $interactive && ! $root; then
-  bear="$dotfiles/ursa/"
-  for i in $bear*.sh; do
+run_dir() {
+  for i in "$dotfiles/$1/"*.sh; do
     source "$i"
   done
+  unset i
+}
+
+if [ -z $spawned ] || [ -n "$etc_environment_ran" ]; then
+  run_dir login
+fi
+
+if $interactive; then
+  run_dir interactive
+fi
+
+if $wsl; then
+  source "$wslfiles/wslaunch"
 fi
 
 umask 000 # since I don't actually care too much about perms

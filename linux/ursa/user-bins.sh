@@ -1,5 +1,0 @@
-#shellcheck shell=bash
-
-if [ -d "$HOME/.local/bin" ]; then
-  PATH+=":$HOME/.local/bin"
-fi

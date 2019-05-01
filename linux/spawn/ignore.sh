@@ -1,1 +1,0 @@
-export SHELLCHECK_OPTS="-e SC2155 -e 2164"

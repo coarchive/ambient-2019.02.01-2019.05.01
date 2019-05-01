@@ -1,1 +1,2 @@
-net stop LxssManager
+@echo off
+ntrc net stop LxssManager

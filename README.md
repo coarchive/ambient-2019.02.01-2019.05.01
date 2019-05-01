@@ -1,4 +1,4 @@
-# ambient (environment)
+# ambient 0.3.0
 
 I "like" Windows since it has a "nice" interface and I'm used to it.
 Also, some of the applications that I use are all built for Windows.

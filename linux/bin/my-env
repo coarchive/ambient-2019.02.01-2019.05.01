@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-const reset = "\033[0m";
+const reset = "[0m";
 
-const green = "\033[32m";
-const orange = "\033[33m";
-const blue = "\033[34m";
-const purple = "\033[35m";
-const grey = "\033[37m";
-const pink = "\033[91m";
-const yellow = "\033[93m";
+const green = "[32m";
+const orange = "[33m";
+const blue = "[34m";
+const purple = "[35m";
+const grey = "[37m";
+const pink = "[91m";
+const yellow = "[93m";
 
 let delimiter = process.platform === "win32" ? ';' : ':';
 
@@ -29,7 +29,7 @@ function out(...strs) {
 }
 
 function outKey(str) {
-  out(pink, str, orange, ' : ');
+  out(pink, str, orange, ': ', reset);
 }
 
 function outln(...strs) {
@@ -50,7 +50,7 @@ function outValue(val) {
     val.split(delimiter).forEach((str, idx, self) => {
       outString("  ", str);
       if (idx + 1 !== self.length) {
-        out(grey, ',');
+        out(grey, ',', reset);
       }
       log('');
     });
@@ -65,13 +65,13 @@ function isBashFunction(key) {
 }
 
 function writeBashFunction(key) {
-  out(purple, "function ", grey, key.slice(10, -2), '');
+  out(purple, "function ", grey, key.slice(10, -2), "() ", blue, '{', grey, " ... ", blue, '}', '\n');
 }
 
 Object.keys(process.env).sort().forEach((key) => {
   const val = process.env[key];
   if (isBashFunction(key)) {
-    outKey(key.slice(10, -2));
+    writeBashFunction(key);
   } else if (key == "PS1") {
     logPrompt(val);
   } else {

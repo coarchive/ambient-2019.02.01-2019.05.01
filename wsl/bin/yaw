@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+
+local $/;
+my $stdin = <STDIN>;
+
+print $stdin =~ s{/mnt/c}{C:}gr;

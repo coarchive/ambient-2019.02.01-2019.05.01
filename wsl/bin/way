@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+
+local $/; # slurp mode
+my $stdin = <STDIN>;
+
+print (($stdin =~ s{C:}{/mnt/c}gr) =~ s{\\}{/}gr);

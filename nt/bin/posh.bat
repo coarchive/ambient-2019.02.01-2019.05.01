@@ -1,1 +1,1 @@
-powershell.exe -NoExit -NoLogo -Command "clear"
+powershell.exe -NoLogo -Command "clear"

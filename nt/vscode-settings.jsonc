@@ -4,7 +4,6 @@
       "terminal.integrated.shell.windows": "/Windows/System32/wsl.exe",
       "terminal.integrated.fontFamily": "Hack, Ubuntu Mono, Consolas",
       "terminal.external.windowsExec": "/Windows/System32/wsl.exe",
-
     // Editor
       // Functionality
         "editor.tabSize": 2,
@@ -13,10 +12,8 @@
         "editor.selectionHighlight": false, // too distracting
         "editor.multiCursorModifier": "ctrlCmd",
         "editor.emptySelectionClipboard": false,
-
       // Autocomplete
         "editor.acceptSuggestionOnEnter": "off",
-
       // Appearance
         "editor.fontFamily": "Hack, Consolas, monospace",
         "editor.renderWhitespace": "boundary",
@@ -25,7 +22,6 @@
         "editor.parameterHints.enabled": false,
         "editor.minimap.renderCharacters": false,
         "editor.acceptSuggestionOnCommitCharacter": false,
-
     // Files
       "files.eol": "\n",
       "files.insertFinalNewline": true,
@@ -34,10 +30,8 @@
         "*.bash_profile": "shellscript",
         "*.bashrc": "shellscript",
       },
-
     // File Tree
       "explorer.confirmDragAndDrop": false,
-
     // Workbench
       "workbench.startupEditor": "none",
       "workbench.list.keyboardNavigation": "simple", // turns off that annoying filter "feature"
@@ -52,30 +46,24 @@
         "workbench.colorCustomizations": {
           "editorWarning.foreground": "#b6c9",
         },
-
     // Window
       "window.zoomLevel": 0,
       "window.restoreWindows": "folders",
       "window.menuBarVisibility": "visible",
-
     // Debug
       "debug.openDebug": "neverOpen",
       "debug.showInStatusBar": "never",
       "debug.internalConsoleOptions": "neverOpen",
-
     // etc..
       "telemetry.enableTelemetry": false,
       "breadcrumbs.enabled": true,
       "explorer.sortOrder": "type",
-
-
   /* Language Specific */
     // (?:Java|Type)Script
       "javascript.autoClosingTags": false,
       "javascript.preferences.quoteStyle": "double",
       "javascript.updateImportsOnFileMove.enabled": "always",
       "javascript.suggest.completeJSDocs": false,
-      "javascript.implicitProjectConfig.checkJs": true,
     // Java
       "java.autobuild.enabled": false,
       "java.import.maven.enabled": false,
@@ -99,14 +87,16 @@
       "csharpfixformat.style.spaces.beforeParenthesis": false,
     // C(?:++)?
       "C_Cpp.clang_format_fallbackStyle": "LLVM",
-
+    // Crystal
+      "crystal-lang.compiler": "crystal.bat",
+      "crystal-lang.bashOnWindows": true,
+      "crystal-lang.hover": true,
+      "crystal-lang.logLevel": "warn",
   /* Extensions */
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-
     // Atom Keymap
       "atomKeymap.promptV3Features": true,
-
     // git
       "git.defaultCloneDirectory": "/Users/Alf/Desktop",
       "git.enableSmartCommit": true,
@@ -114,26 +104,20 @@
       "git.autofetch": true,
       "git.path": "/Users/Alf/Desktop/ambient/nt/bin/git.exe",
       "git.ignoreMissingGitWarning": true,
-
     // Shellcheck
       "shellcheck.useWSL": true,
       "shellcheck.disableVersionCheck": true,
       "cSpell.spellCheckDelayMs": 999,
-
     // Liveshare
       "liveshare.showInStatusBar": "never",
-    
     // Settings Sync
       "sync.gist": "0a038f3900f101ea5a7d9e3a8cefa539",
-    
     // Code Time
       "showWeeklyRanking": false,
       "showMusicMetrics": false,
       "showGitMetrics": false,
+    // Spell Check
       "cSpell.logLevel": "Information",
       "cSpell.language": "en,en-US",
-      "crystal-lang.compiler": "crystal.bat",
-      "crystal-lang.bashOnWindows": true,
-      "crystal-lang.hover": true,
-      "crystal-lang.logLevel": "warn",
+      "dotty.trace.machineId": "baee9bb7-eafc-48ea-8f26-a072bcb7d677",
 }
